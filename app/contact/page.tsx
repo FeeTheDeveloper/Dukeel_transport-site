@@ -17,7 +17,7 @@ const contactInfo = [
   },
   {
     title: "Email",
-    value: "info@dukeel.com",
+    value: "contact@dukeeltransport.com",
     icon: "✉️",
   },
   {
@@ -144,11 +144,11 @@ export default function ContactPage() {
                   Or reach us directly via email:
                 </p>
                 <a
-                  href="mailto:info@dukeel.com?subject=Inquiry from Website"
+                  href="mailto:contact@dukeeltransport.com?subject=Inquiry from Website"
                   className="block"
                 >
                   <Button variant="ghost" size="md" fullWidth>
-                    Email Us Directly: info@dukeel.com
+                    Email Us Directly: contact@dukeeltransport.com
                   </Button>
                 </a>
               </div>
