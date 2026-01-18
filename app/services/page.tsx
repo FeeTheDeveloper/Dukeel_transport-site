@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   Container,
   Button,
-  SectionHeading,
   Card,
   CardBody,
 } from "@/components/ui";

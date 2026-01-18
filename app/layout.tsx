@@ -6,6 +6,9 @@ import { Navbar, Footer } from "@/components/ui";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://dukeel.com"
+  ),
   title: {
     default: "Dukeel Transportation & Freight Corporation",
     template: "%s | Dukeel Transportation & Freight",

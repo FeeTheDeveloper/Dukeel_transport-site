@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Container,
   Button,
@@ -57,9 +58,16 @@ export default function Home() {
       <section className="bg-primary text-white py-20 lg:py-32">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-accent font-semibold mb-4 text-lg">
-              Veteran-Owned & Operated
-            </p>
+            <div className="flex justify-center mb-8">
+              <Image
+                src="/assets/logo.png"
+                alt="Dukeel Transportation & Freight Corporation - Veteran-Owned"
+                width={768}
+                height={768}
+                className="w-[576px] h-[576px] lg:w-[768px] lg:h-[768px] object-contain drop-shadow-lg"
+                priority
+              />
+            </div>
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white">
               Transportation, Freight & Logistics Solutions
             </h1>
