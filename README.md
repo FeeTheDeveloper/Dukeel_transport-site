@@ -1,175 +1,114 @@
-# Dukeel Transport Site
+# Dukeel Transport Marketing Site
 
-A production-ready Next.js 14+ application with App Router, TypeScript, and Tailwind CSS.
+Production-grade marketing site for dukeeltransport.com built with Next.js App Router, TypeScript, and Tailwind CSS.
 
-## 🚀 Tech Stack
+## ✅ Tech Stack
 
-- **Next.js 16** - React framework with App Router
-- **TypeScript 5** - Type safety
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **ESLint** - Code linting
-- **Node.js 20.x** - Runtime environment
+- **Next.js 16** (App Router)
+- **TypeScript 5**
+- **Tailwind CSS 4**
+- **Node.js 20+**
+- **Vercel-safe** deployment (no custom server)
 
-## 📁 Project Structure
+## 📁 Complete File Tree
 
 ```
-├── app/              # Next.js App Router pages and layouts
-│   ├── layout.tsx    # Root layout component
-│   ├── page.tsx      # Homepage
-│   └── globals.css   # Global styles
-├── components/       # Reusable React components
-├── lib/             # Utility functions and shared code
-├── public/          # Static assets
-│   └── assets/      # Images, logos, etc.
-└── ...config files
+.
+├── .gitignore
+├── .nvmrc
+├── README.md
+├── app
+│   ├── about
+│   │   └── page.tsx
+│   ├── contact
+│   │   ├── ContactForm.tsx
+│   │   ├── actions.ts
+│   │   └── page.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── services
+│       └── page.tsx
+├── components
+│   ├── .gitkeep
+│   ├── sections
+│   │   ├── CTASection.tsx
+│   │   ├── CoverageBand.tsx
+│   │   ├── Hero.tsx
+│   │   ├── ServicesGrid.tsx
+│   │   ├── Testimonials.tsx
+│   │   └── index.ts
+│   └── ui
+│       ├── Button.tsx
+│       ├── Card.tsx
+│       ├── Container.tsx
+│       ├── Footer.tsx
+│       ├── Navbar.tsx
+│       ├── SectionHeading.tsx
+│       ├── SignatureStamp.tsx
+│       └── index.ts
+├── eslint.config.mjs
+├── lib
+│   └── .gitkeep
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public
+│   └── assets
+│       ├── coverage-map.svg
+│       ├── hero-fleet.svg
+│       ├── logo.png
+│       ├── logo.svg
+│       └── og-image.svg
+└── tsconfig.json
 ```
 
-## 🛠️ Local Development
+## 🛠️ Local Run Steps
 
-### Prerequisites
-
-- Node.js 20.x or higher
-- npm (comes with Node.js)
-
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd Dukeel_transport-site
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Run the development server:
-```bash
+nvm use
+npm ci
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-### Available Scripts
+## 🚀 Vercel Deploy Steps
 
-- `npm run dev` - Start development server with hot reload
-- `npm run build` - Create production build
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint to check code quality
+1. Push this repo to GitHub.
+2. In Vercel, click **New Project** → import the repo.
+3. Framework preset: **Next.js** (defaults are correct).
+4. Build Command: `npm run build`
+5. Output: `.next`
+6. Deploy.
 
-## ✏️ Where to Edit Content
+## 🖼️ Logo & Asset Replacement
 
-### Homepage Content
-Edit `app/page.tsx` to customize:
-- Hero section text and layout
-- Call-to-action buttons
-- Main content sections
+- **Primary logo:** `public/assets/logo.png` (keep aspect ratio; transparent PNG recommended).
+- **Alternate SVG logo:** `public/assets/logo.svg`
+- **Hero illustration placeholder:** `public/assets/hero-fleet.svg`
+- **Coverage map placeholder:** `public/assets/coverage-map.svg`
+- **Open Graph image placeholder:** `public/assets/og-image.svg`
 
-### Site Metadata
-Edit `app/layout.tsx` to update:
-- Site title
-- Meta description
-- Global layout structure
+Swap files with the same filenames to update visuals without code changes.
 
-### Styling
-- `app/globals.css` - Global CSS styles and Tailwind imports
-- Use Tailwind utility classes directly in components
+## 🎨 Brand Color Adjustments
 
-### Logo
-Replace `public/assets/logo.png` with your own logo image (200x200px recommended).
+Brand tokens live in `app/globals.css` under `@theme`. Update color values there to change the palette safely.
 
-### Components
-Create reusable components in the `components/` directory:
-```tsx
-// components/Button.tsx
-export function Button({ children }: { children: React.ReactNode }) {
-  return <button className="...">{children}</button>;
-}
-```
+## ✅ Deploy Checklist (Vercel-Ready)
 
-### Utilities
-Place helper functions in the `lib/` directory:
-```typescript
-// lib/utils.ts
-export function formatDate(date: Date): string {
-  return date.toLocaleDateString();
-}
-```
+- [x] `npm ci` completes successfully
+- [x] `npm run build` succeeds
+- [x] No TypeScript errors during build
+- [x] `npm run lint` has no blocking issues
 
-## 🚢 Deployment
+## 📚 Key Files
 
-### Deploy to Vercel (Recommended)
-
-1. Push your code to GitHub/GitLab/Bitbucket
-
-2. Import your repository on [Vercel](https://vercel.com/new):
-   - Click "Import Project"
-   - Select your Git provider and repository
-   - Configure project (defaults should work)
-   - Click "Deploy"
-
-3. Your site will be live with a `.vercel.app` URL
-
-### Environment Variables
-
-If you need environment variables:
-
-1. Create a `.env.local` file (already gitignored):
-```bash
-NEXT_PUBLIC_API_URL=https://api.example.com
-```
-
-2. Add the same variables in Vercel dashboard under "Settings" → "Environment Variables"
-
-### Build Verification
-
-Before deploying, always verify the build succeeds locally:
-```bash
-npm run build
-npm run start
-```
-
-## 📝 Additional Configuration
-
-### Adding Pages
-
-Create new routes by adding files in the `app/` directory:
-```
-app/
-├── about/
-│   └── page.tsx       # /about route
-└── contact/
-    └── page.tsx       # /contact route
-```
-
-### TypeScript
-
-TypeScript is configured and ready. Type checking runs automatically during build.
-
-### ESLint
-
-ESLint is configured with Next.js recommended rules. Run manually:
-```bash
-npm run lint
-```
-
-## 📚 Resources
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs)
-- [Vercel Deployment Docs](https://vercel.com/docs)
-
-## 🤝 Contributing
-
-1. Create a feature branch: `git checkout -b feature/your-feature`
-2. Make your changes
-3. Test the build: `npm run build`
-4. Commit your changes: `git commit -m "feat: your feature"`
-5. Push to the branch: `git push origin feature/your-feature`
-6. Open a Pull Request
-
-## 📄 License
-
-Private repository - All rights reserved.
+- `app/layout.tsx` — global metadata and layout shell
+- `app/page.tsx` — marketing home page
+- `app/services/page.tsx` — services page
+- `app/about/page.tsx` — about page
+- `app/contact/page.tsx` — contact page with server action

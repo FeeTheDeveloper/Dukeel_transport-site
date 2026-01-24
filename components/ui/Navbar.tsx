@@ -32,7 +32,7 @@ export function Navbar({ links = defaultLinks, className = "" }: NavbarProps) {
 
   return (
     <header
-      className={`bg-white border-b border-border sticky top-0 z-50 ${className}`}
+      className={`bg-white/95 border-b border-border sticky top-0 z-50 backdrop-blur ${className}`}
     >
       <Container>
         <nav
@@ -46,7 +46,7 @@ export function Navbar({ links = defaultLinks, className = "" }: NavbarProps) {
           >
             <Image
               src="/assets/logo.png"
-              alt="Dukeel Transportation & Freight Corporation"
+              alt="Dukeel Transport logo"
               width={44}
               height={44}
               className="h-10 w-10 lg:h-11 lg:w-11"
@@ -56,8 +56,8 @@ export function Navbar({ links = defaultLinks, className = "" }: NavbarProps) {
               <span className="text-lg lg:text-xl font-bold text-primary leading-tight">
                 Dukeel
               </span>
-              <span className="text-xs text-steel hidden sm:block">
-                Transportation & Freight
+              <span className="text-xs text-steel hidden sm:block uppercase tracking-[0.2em]">
+                Transport
               </span>
             </div>
           </Link>
@@ -69,16 +69,18 @@ export function Navbar({ links = defaultLinks, className = "" }: NavbarProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-steel font-medium hover:text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded px-2 py-1"
+                    className="text-steel font-semibold uppercase tracking-[0.15em] text-xs hover:text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded px-2 py-1"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <Button variant="primary" size="md">
-              Get a Quote
-            </Button>
+            <Link href="/contact">
+              <Button variant="primary" size="md">
+                Request a Quote
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -127,7 +129,7 @@ export function Navbar({ links = defaultLinks, className = "" }: NavbarProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block px-4 py-3 text-steel font-medium hover:text-primary hover:bg-light rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    className="block px-4 py-3 text-steel font-semibold uppercase tracking-[0.15em] text-xs hover:text-primary hover:bg-light rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
@@ -136,9 +138,11 @@ export function Navbar({ links = defaultLinks, className = "" }: NavbarProps) {
               ))}
             </ul>
             <div className="mt-4 px-4">
-              <Button variant="primary" size="md" fullWidth>
-                Get a Quote
-              </Button>
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                <Button variant="primary" size="md" fullWidth>
+                  Request a Quote
+                </Button>
+              </Link>
             </div>
           </div>
         )}

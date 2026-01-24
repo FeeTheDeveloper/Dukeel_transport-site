@@ -1,50 +1,47 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar, Footer } from "@/components/ui";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://dukeel.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://dukeeltransport.com"
   ),
   title: {
-    default: "Dukeel Transportation & Freight Corporation",
-    template: "%s | Dukeel Transportation & Freight",
+    default: "Dukeel Transport | Freight, Logistics & Fleet Operations",
+    template: "%s | Dukeel Transport",
   },
   description:
-    "Veteran-owned transportation and logistics company providing dependable freight, hauling, and logistics support for commercial clients and government agencies.",
+    "Dukeel Transport delivers enterprise-grade freight, fleet, and logistics operations built for high-impact supply chains across the United States.",
   keywords: [
-    "veteran-owned transportation",
     "freight logistics",
-    "government contracting",
-    "DoD logistics",
-    "Texas freight company",
+    "fleet operations",
+    "enterprise transportation",
+    "supply chain performance",
+    "Texas logistics company",
   ],
-  authors: [{ name: "Dukeel Transportation & Freight Corporation" }],
+  authors: [{ name: "Dukeel Transport" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dukeel.com",
-    siteName: "Dukeel Transportation & Freight Corporation",
-    title: "Dukeel Transportation & Freight Corporation",
+    url: "https://dukeeltransport.com",
+    siteName: "Dukeel Transport",
+    title: "Dukeel Transport",
     description:
-      "Veteran-owned transportation and logistics company providing dependable freight, hauling, and logistics support for commercial clients and government agencies.",
+      "Enterprise-grade freight, fleet, and logistics operations built for high-impact supply chains.",
     images: [
       {
-        url: "/assets/og-image.png",
+        url: "/assets/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Dukeel Transportation & Freight Corporation",
+        alt: "Dukeel Transport",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dukeel Transportation & Freight Corporation",
+    title: "Dukeel Transport",
     description:
-      "Veteran-owned transportation and logistics company providing dependable freight, hauling, and logistics support.",
+      "Enterprise-grade freight, fleet, and logistics operations built for high-impact supply chains.",
   },
   robots: {
     index: true,
@@ -55,8 +52,7 @@ export const metadata: Metadata = {
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Government", href: "/government" },
-  { label: "Readiness", href: "/readiness" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -67,9 +63,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="bg-background text-foreground font-sans">
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         <Navbar links={navLinks} />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

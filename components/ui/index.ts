@@ -5,3 +5,4 @@ export { SectionHeading } from "./SectionHeading";
 export { Card, CardHeader, CardBody, CardFooter } from "./Card";
 export { Navbar } from "./Navbar";
 export { Footer } from "./Footer";
+export { SignatureStamp } from "./SignatureStamp";

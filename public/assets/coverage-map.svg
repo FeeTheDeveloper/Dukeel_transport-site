@@ -1,0 +1,11 @@
+<svg width="900" height="600" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="600" rx="40" fill="#0B1F3B"/>
+  <path d="M120 190C210 120 330 90 420 120C510 150 560 220 650 240C740 260 790 310 780 360C770 410 690 460 600 470C510 480 430 450 350 430C270 410 210 360 170 300C130 240 150 220 120 190Z" fill="#14304F"/>
+  <path d="M170 300C210 260 270 230 330 240C390 250 430 300 490 320C550 340 610 360 640 390" stroke="#E46A2A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="250" cy="260" r="12" fill="#E46A2A"/>
+  <circle cx="380" cy="320" r="12" fill="#E46A2A"/>
+  <circle cx="520" cy="360" r="12" fill="#E46A2A"/>
+  <circle cx="620" cy="410" r="12" fill="#E46A2A"/>
+  <path d="M240 420H660" stroke="#E7EAEE" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 12"/>
+  <text x="80" y="520" fill="#E7EAEE" font-family="Inter, sans-serif" font-size="28" letter-spacing="6">NATIONWIDE COVERAGE</text>
+</svg>
