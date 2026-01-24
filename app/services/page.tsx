@@ -1,181 +1,185 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  Container,
-  Button,
-  Card,
-  CardBody,
-} from "@/components/ui";
+import { Button, Card, CardBody, Container, SectionHeading } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Comprehensive transportation and logistics services including freight transportation, government contract logistics, dedicated hauling, and time-critical freight.",
+    "Comprehensive freight, fleet, and logistics services built for enterprise supply chains.",
   openGraph: {
-    title: "Our Services | Dukeel Transportation & Freight",
-    description:
-      "Freight Transportation, Government Logistics, Dedicated Hauling, and Time-Critical Freight Services",
+    title: "Our Services | Dukeel Transport",
+    description: "Freight, fleet, and logistics operations engineered for performance.",
   },
 };
 
 const services = [
   {
-    title: "Freight Transportation",
-    subtitle: "Local, Regional, Long-Haul",
+    title: "Freight & Linehaul",
+    subtitle: "National Coverage",
     description:
-      "Comprehensive freight transportation services covering local deliveries, regional distribution, and long-haul routes across the nation. Our fleet and logistics network ensure your cargo arrives safely and on time.",
+      "High-velocity freight execution across local, regional, and long-haul lanes with precise dispatch control and continuous visibility.",
     features: [
-      "Full Truckload (FTL) services",
-      "Less Than Truckload (LTL) options",
-      "Cross-country long-haul capabilities",
-      "Regional distribution networks",
-      "Real-time shipment tracking",
+      "Full Truckload (FTL) lanes",
+      "Regional distribution coverage",
+      "Cross-country linehaul routing",
+      "Real-time dispatch updates",
+      "High-visibility status reporting",
     ],
-    icon: "🚛",
+    metric: "1,200+ lanes",
   },
   {
-    title: "Government & Defense Contract Logistics Support",
-    subtitle: "Federal, State, Municipal",
+    title: "Dedicated Fleet Operations",
+    subtitle: "Reserved Capacity",
     description:
-      "Purpose-built logistics support for government agencies and defense contractors. We align with procurement standards, compliance requirements, and performance expectations for secure and reliable logistics execution.",
+      "Dedicated assets with optimized routing, load management, and SLA-driven performance for high-volume contracts.",
     features: [
-      "DoD logistics support",
-      "Federal agency transportation",
-      "State contract fulfillment",
-      "Municipal logistics services",
-      "Compliance-ready operations",
-    ],
-    icon: "🏛️",
-  },
-  {
-    title: "Dedicated Hauling & Load Management",
-    subtitle: "Customized Solutions",
-    description:
-      "Dedicated hauling services with comprehensive load management for clients requiring consistent, reliable transportation. Our dedicated fleet solutions provide predictable capacity and personalized service.",
-    features: [
-      "Dedicated fleet assignments",
-      "Custom routing solutions",
-      "Load optimization",
-      "Capacity planning",
+      "Guaranteed capacity blocks",
       "Dedicated driver teams",
+      "Custom lane design",
+      "Scheduled pickup windows",
+      "Seasonal surge planning",
     ],
-    icon: "📦",
+    metric: "240+ assets",
   },
   {
-    title: "Time-Critical & Priority Freight",
-    subtitle: "Urgent Delivery",
+    title: "Time-Critical & Expedited",
+    subtitle: "Rapid Response",
     description:
-      "When timing is everything, our time-critical freight services deliver. Aggressive response timelines and priority handling ensure your urgent shipments arrive when they're needed most.",
+      "Priority freight execution with rapid dispatch, escalated tracking, and constant status updates for critical moves.",
     features: [
-      "Expedited shipping options",
-      "24/7 dispatch availability",
-      "Priority load handling",
-      "Guaranteed delivery windows",
-      "Real-time status updates",
+      "24/7 dispatch escalation",
+      "Priority capacity allocation",
+      "On-demand team drivers",
+      "Real-time ETA updates",
+      "Direct command center access",
     ],
-    icon: "⏱️",
+    metric: "30 min response",
   },
   {
-    title: "Contract-Based Transportation Services",
-    subtitle: "Long-Term Partnerships",
+    title: "Defense & Government Logistics",
+    subtitle: "Compliance Ready",
     description:
-      "Scalable contract-based transportation services designed for organizations requiring ongoing logistics support. Build a long-term partnership with reliable, consistent service delivery.",
+      "Contract-grade logistics execution aligned to regulated procurement requirements and mission-sensitive delivery windows.",
     features: [
-      "Multi-year contract options",
-      "Volume-based pricing",
-      "Dedicated account management",
-      "Performance guarantees",
-      "Scalable capacity",
+      "Secure routing procedures",
+      "Contract reporting cadence",
+      "Regulated chain-of-custody",
+      "Dedicated account oversight",
+      "Performance compliance dashboards",
     ],
-    icon: "📋",
+    metric: "Mission aligned",
+  },
+  {
+    title: "Control Tower Visibility",
+    subtitle: "Full Transparency",
+    description:
+      "Centralized oversight for freight performance, lane analytics, and proactive exception management.",
+    features: [
+      "Real-time KPI dashboards",
+      "Exception escalation paths",
+      "Lane optimization reviews",
+      "Risk mitigation planning",
+      "Proactive communications",
+    ],
+    metric: "Live analytics",
   },
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero Section */}
       <section className="bg-primary text-white py-16 lg:py-24">
         <Container>
           <div className="max-w-3xl">
-            <p className="text-accent font-semibold mb-4">Our Services</p>
+            <p className="text-accent font-semibold uppercase tracking-[0.3em] text-sm mb-4">
+              Services
+            </p>
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
-              Core Services
+              Precision-built logistics capabilities.
             </h1>
-            <p className="text-xl text-light opacity-90 leading-relaxed">
-              Comprehensive transportation and logistics solutions built on
-              military discipline, operational precision, and execution under
-              pressure.
+            <p className="text-xl text-light/90 leading-relaxed">
+              Every service is engineered to meet enterprise SLAs, protect
+              mission-critical freight, and keep supply chains moving without
+              disruption.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* Services List */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container>
-          <div className="space-y-16">
-            {services.map((service, index) => (
-              <div
-                key={service.title}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
-              >
-                <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="text-5xl mb-4">{service.icon}</div>
-                  <p className="text-accent font-semibold mb-2">
-                    {service.subtitle}
-                  </p>
-                  <h2 className="text-3xl font-bold text-primary mb-4">
-                    {service.title}
-                  </h2>
-                  <p className="text-steel text-lg leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-                  <Link href="/contact">
-                    <Button variant="primary" size="md">
-                      Get a Quote
-                    </Button>
-                  </Link>
-                </div>
-                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                  <Card padding="lg" className="bg-light border-0">
-                    <CardBody>
-                      <h4 className="font-bold text-primary mb-4">
-                        Key Features
-                      </h4>
-                      <ul className="space-y-3">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start mb-16">
+            <SectionHeading
+              title="Disciplined execution across every mile."
+              subtitle="From long-haul freight to control tower analytics, Dukeel Transport provides a unified logistics command structure."
+            />
+            <div className="rounded-2xl border border-border bg-light/70 p-6">
+              <p className="text-sm uppercase tracking-[0.3em] text-steel mb-2">
+                Standard Service Guarantees
+              </p>
+              <ul className="space-y-3 text-steel">
+                <li>Dedicated dispatch lead assigned per account</li>
+                <li>Live load visibility within 15 minutes of pickup</li>
+                <li>Operational KPI review every 30 days</li>
+                <li>Escalation hotline for time-critical loads</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-10">
+            {services.map((service) => (
+              <Card key={service.title} padding="lg" className="bg-white">
+                <CardBody>
+                  <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.3em] text-accent mb-2">
+                        {service.metric}
+                      </p>
+                      <h2 className="text-2xl lg:text-3xl font-bold text-primary mb-3">
+                        {service.title}
+                      </h2>
+                      <p className="text-steel text-lg leading-relaxed mb-5">
+                        {service.description}
+                      </p>
+                      <Link href="/contact">
+                        <Button variant="primary" size="md">
+                          Request a Quote
+                        </Button>
+                      </Link>
+                    </div>
+                    <div className="rounded-2xl border border-border bg-light/70 p-6">
+                      <p className="text-sm uppercase tracking-[0.3em] text-steel mb-3">
+                        Key capabilities
+                      </p>
+                      <ul className="space-y-3 text-steel">
                         {service.features.map((feature) => (
                           <li
                             key={feature}
-                            className="flex items-start gap-3 text-steel"
+                            className="flex items-start gap-3"
                           >
                             <span className="text-accent font-bold">✓</span>
                             {feature}
                           </li>
                         ))}
                       </ul>
-                    </CardBody>
-                  </Card>
-                </div>
-              </div>
+                    </div>
+                  </div>
+                </CardBody>
+              </Card>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-accent">
+      <section className="py-20 lg:py-28 bg-accent">
         <Container>
           <div className="text-center text-white">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
-              Need a Custom Logistics Solution?
+              Build your custom freight command plan.
             </h2>
-            <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Contact us to discuss your specific transportation and logistics
-              requirements. We&apos;re ready to build a solution that fits your
-              needs.
+            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+              We align routes, capacity, and reporting to match your operational
+              demands. Engage our team to build a tailored proposal.
             </p>
             <Link href="/contact">
               <Button
@@ -183,7 +187,7 @@ export default function ServicesPage() {
                 size="lg"
                 className="border-white text-white hover:bg-white hover:text-accent"
               >
-                Contact Us Today
+                Contact Operations
               </Button>
             </Link>
           </div>
