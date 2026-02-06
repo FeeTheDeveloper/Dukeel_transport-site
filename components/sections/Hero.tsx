@@ -15,16 +15,17 @@ export function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(120deg,#0b1f3b_0%,#102a4f_45%,#061425_100%)]" />
       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,#ffffff20_1px,transparent_1px),linear-gradient(to_bottom,#ffffff20_1px,transparent_1px)] [background-size:80px_80px]" />
       <SignatureStamp className="absolute left-1/2 top-24 -translate-x-1/2 text-[clamp(2.5rem,10vw,7rem)]" />
+      <div aria-hidden="true" className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
       <Container className="relative z-10 py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <p className="text-accent font-semibold tracking-[0.2em] uppercase text-sm mb-5">
+            <p className="text-accent-light font-semibold tracking-[0.15em] uppercase text-base mb-5 drop-shadow-lg">
               Logistics Style 01
             </p>
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
               Commanding freight operations for high-stakes supply chains.
             </h1>
-            <p className="text-lg lg:text-xl text-light/90 mb-8 leading-relaxed">
+            <p className="text-lg lg:text-xl text-light/90 mb-8 leading-relaxed drop-shadow">
               Dukeel Transport delivers enterprise-grade logistics with a
               disciplined, execution-first approach. We move critical freight
               with precision coverage, proactive dispatch, and uncompromising

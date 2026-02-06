@@ -98,6 +98,18 @@ Swap files with the same filenames to update visuals without code changes.
 
 Brand tokens live in `app/globals.css` under `@theme`. Update color values there to change the palette safely.
 
+## 🎯 Recent Updates
+
+### Hero Section Contrast Improvements (Feb 2026)
+Enhanced text legibility and accessibility in the Hero component:
+- **Dark overlay layer**: Added `bg-black/40 backdrop-blur-sm` overlay for better text contrast against the gradient background
+- **Text shadows**: Applied `drop-shadow-lg` to headline and subheading, `drop-shadow` to body text
+- **Improved subheading visibility**: 
+  - Changed from `text-accent` to `text-accent-light` for better contrast
+  - Increased font size from `text-sm` to `text-base`
+  - Reduced letter-spacing from `0.2em` to `0.15em` for better readability
+- **Accessibility**: Overlay marked with `aria-hidden="true"` to avoid interfering with screen readers
+
 ## ✅ Deploy Checklist (Vercel-Ready)
 
 - [x] `npm ci` completes successfully
