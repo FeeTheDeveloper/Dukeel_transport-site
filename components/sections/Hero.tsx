@@ -19,9 +19,6 @@ export function Hero() {
       <Container className="relative z-10 py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <p className="text-accent-light font-semibold tracking-[0.15em] uppercase text-base mb-5 drop-shadow-lg">
-              Logistics Style 01
-            </p>
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
               Commanding freight operations for high-stakes supply chains.
             </h1>
